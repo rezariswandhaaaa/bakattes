@@ -19,15 +19,15 @@ class AdminSeeder extends Seeder
         if ($admin) {
             // Update email dan password admin
             $admin->update([
-                'email' => 'admin@tesbakat.com',
-                'password' => Hash::make('tesbakat2025!') // password baru
+                'email' => 'bakattes75@gmail.com',
+                'password' => Hash::make('Urbraindevpro@!123') // password baru
             ]);
         } else {
             // Buat admin baru jika belum ada
             User::create([
                 'name' => 'Admin',
-                'email' => 'admin@tesbakat.com',
-                'password' => Hash::make('tesbakat2025!'),
+                'email' => 'bakattes75@gmail.com',
+                'password' => Hash::make('Urbraindevpro@!123'),
                 'role' => 'admin'
             ]);
         }
