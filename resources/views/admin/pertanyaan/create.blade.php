@@ -89,7 +89,19 @@
                     <a href="{{ route('pertanyaan.index') }}"
                         class="flex items-center px-4 py-2 space-x-3 bg-[#173f67] rounded-lg">
                         <i data-lucide="file-text" class="w-5 h-5"></i>
-                        <span>Kelola Tes</span>
+                        <span>Kelola Pertanyaan</span>
+                    </a>
+
+                    <a href="{{ route('admin.produk.index') }}"
+                        class="flex items-center px-4 py-2 space-x-3 transition-colors duration-200 rounded-lg hover:bg-[#173f67]">
+                        <i data-lucide="clipboard-pen" class="w-5 h-5"></i>
+                        <span>Produk</span>
+                    </a>
+
+                    <a href="{{ route('riwayat.index') }}"
+                        class="flex items-center px-4 py-2 space-x-3 transition-colors duration-200 rounded-lg hover:bg-[#173f67]">
+                        <i data-lucide="folder-clock" class="w-5 h-5"></i>
+                        <span>Riwayat Hasil Tes</span>
                     </a>
                 </nav>
             </div>
