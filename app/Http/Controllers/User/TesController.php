@@ -7,7 +7,7 @@ use App\Models\Jawaban;
 use App\Models\Pertanyaan;
 use App\Models\Transaksi;
 use App\Models\User;
-use App\Services\CliftonAIService;
+use App\Services\CliftonAiService as ServicesCliftonAiService;
 use App\Services\CliftonStrengthService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
@@ -333,17 +333,17 @@ class TesController extends Controller
         // ------------------------------------------
         // Bagian: Potensi pekerjaan (AI)
         // ------------------------------------------
-        $potensiPekerjaan = CliftonAiService::potensiPekerjaan($top7Text);
+        $potensiPekerjaan = ServicesCliftonAiService::potensiPekerjaan($top7Text);
 
         // ------------------------------------------
         // Bagian: Potensi Bakat / Area kekuatan (AI)
         // ------------------------------------------
-        $potensiBakat = CliftonAiService::potensiBakat($top7Text);
+        $potensiBakat = ServicesCliftonAiService::potensiBakat($top7Text);
 
         // ------------------------------------------
         // Bagian: Public Speaking & Communication Style (AI)
         // ------------------------------------------
-        $komunikasiSummary = CliftonAiService::komunikasiSummary($top7Text);
+        $komunikasiSummary = ServicesCliftonAiService::komunikasiSummary($top7Text);
 
         // Generate PDF hasil tes
         $timestamp = now()->format('Ymd_His');
