@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <div class="min-h-screen flex items-center justify-center bg-gray-100">
+
         <div class="w-full max-w-xl p-6 bg-white shadow-md rounded-2xl">
             <form action="{{ route('pertanyaan.store') }}" method="POST">
                 @csrf
@@ -91,7 +91,7 @@
 
             </form>
         </div>
-    </div>
+    
 
 
 @endsection
