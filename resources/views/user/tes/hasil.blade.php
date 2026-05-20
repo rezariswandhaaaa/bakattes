@@ -50,6 +50,22 @@
             </div>
         </div>
 
+        <!-- Info Card -->
+        <div class="p-5 mt-6 border border-blue-200 bg-blue-50 rounded-xl">
+            <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0">
+                    <i data-lucide="alert-circle" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="mb-1 text-sm font-semibold text-blue-900">Peringatan Sebelum Keluar Halaman Ini</h3>
+                    <p class="text-sm leading-relaxed text-blue-700">
+                        Laporan ini menampilkan hasil dari tes bakat Anda. jangan lupa untuk download hasilnya sebelum keluar dari halaman ini. Jika ada hasil yang belum muncul mohon di refresh kembali halaman webnya.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
         <!-- PDF Viewer -->
         @if (isset($pdfPath))
             <div class="overflow-hidden bg-white shadow-xl rounded-2xl pdf-container">
@@ -130,21 +146,7 @@
             </div>
         @endif
 
-        <!-- Info Card -->
-        <div class="p-5 mt-6 border border-blue-200 bg-blue-50 rounded-xl">
-            <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0">
-                    <i data-lucide="alert-circle" class="w-6 h-6 text-blue-600"></i>
-                </div>
-                <div class="flex-1">
-                    <h3 class="mb-1 text-sm font-semibold text-blue-900">Peringatan Sebelum Keluar Halaman Ini</h3>
-                    <p class="text-sm leading-relaxed text-blue-700">
-                        Laporan ini menampilkan hasil dari tes bakat Anda. jangan lupa untuk download hasilnya sebelum keluar dari halaman ini.
-                    </p>
-
-                </div>
-            </div>
-        </div>
+        
 
     </div>
 
