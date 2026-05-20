@@ -78,7 +78,7 @@
 
                 <!-- PDF Viewer Frame -->
                 <div class="relative p-4 bg-gray-100">
-                    <iframe src="{{ Storage::url($pdfPath) }}"
+                    <iframe src="{{ asset('storage/app/public/' . $pdfPath) }}"
                         class="w-full bg-white border border-gray-200 rounded-lg shadow-inner"
                         style="height: calc(100vh - 280px); min-height: 600px;" title="Hasil Tes CliftonStrengths PDF">
                     </iframe>
@@ -92,7 +92,7 @@
                             <span>Scroll untuk melihat seluruh isi laporan</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <a href="{{ Storage::url($pdfPath) }}" target="_blank"
+                            <a href="{{ asset('storage/app/public/' . $pdfPath) }}" target="_blank"
                                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 transition-colors bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
                                 <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
                                 Buka di Tab Baru
