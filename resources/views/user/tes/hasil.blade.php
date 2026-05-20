@@ -51,7 +51,7 @@
         </div>
 
         <!-- Info Card -->
-        <div class="p-5 mt-6 border border-blue-200 bg-blue-50 rounded-xl">
+        <div class="p-5 mt-6 mb-6 border border-blue-200 bg-blue-50 rounded-xl">
             <div class="flex items-start space-x-3">
                 <div class="flex-shrink-0">
                     <i data-lucide="alert-circle" class="w-6 h-6 text-blue-600"></i>
@@ -146,7 +146,7 @@
             </div>
         @endif
 
-        
+
 
     </div>
 
