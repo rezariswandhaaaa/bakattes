@@ -113,19 +113,21 @@
                     @endif
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Punya Kode Voucher?</label>
-                    <input type="text" name="kode_voucher" placeholder="Contoh: PROMO50"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 uppercase">
-                    <p class="text-xs text-gray-500 mt-1">Kosongkan jika tidak ada.</p>
-                </div>
-                
                 {{-- Tombol Pembayaran --}}
                 <form action="{{ route('user.transaksi.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="produk_id" value="{{ $produk->id }}">
+
+                    {{-- INPUT VOUCHER DIPINDAH KE DALAM SINI --}}
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Punya Kode Voucher?</label>
+                        <input type="text" name="kode_voucher" placeholder="Contoh: PROMO50"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 uppercase">
+                        <p class="text-xs text-gray-500 mt-1">Kosongkan jika tidak ada.</p>
+                    </div>
+
                     <button type="submit"
-                        class="relative inline-flex items-center justify-center w-full px-8 py-4 text-lg font-bold text-white rounded-2xl btn-gradient">
+                        class="relative inline-flex items-center justify-center w-full px-8 py-4 text-lg font-bold text-white rounded-2xl btn-gradient hover:opacity-90 transition-opacity">
                         Beli Sekarang
                     </button>
                 </form>
