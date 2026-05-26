@@ -123,7 +123,7 @@
                             <div class="bg-[#eef5fb] border border-[#d8e3ec] rounded-2xl p-4 text-sm text-[#0f3150]">
 
                                 <strong>Langkah 1</strong><br>
-                                Selesaikan pembayaran melalui Xendit terlebih dahulu.
+                                Selesaikan pembayaran terlebih dahulu.
 
                             </div>
 
@@ -176,9 +176,25 @@
 
                         <p class="mt-2 text-sm text-gray-600">
 
-                            Bukti pembayaran sudah diterima dan sedang diverifikasi.
+                            Terima kasih, bukti transfer berhasil dikirim. Admin kami sedang melakukan pengecekan data.
+                            Mohon muat ulang (refresh) halaman ini secara berkala untuk mengetahui status terbaru.
 
                         </p>
+
+                        <div class="p-3 mt-4 text-left border border-red-200 bg-red-50 rounded-xl">
+                            <div class="flex items-start space-x-2">
+                                <span class="text-lg leading-none text-red-600">⚠️</span>
+                                <div>
+                                    <h4 class="text-xs font-bold tracking-wide text-red-800 uppercase">Penting: Jangan
+                                        Tutup Halaman Ini</h4>
+                                    <p class="text-[11px] mt-1 text-red-700 leading-snug">
+                                        Mohon tetap berada di halaman ini hingga proses verifikasi selesai. Menutup
+                                        halaman sebelum verifikasi disetujui dapat mengakibatkan hangusnya hak akses
+                                        tes, dan Anda mungkin diharuskan melakukan pembayaran ulang.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                         <button onclick="window.location.reload()"
                             class="mt-6 w-full py-3 rounded-2xl border border-[#0f3150] text-[#0f3150] hover:bg-[#0f3150] hover:text-white transition">
