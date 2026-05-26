@@ -142,9 +142,7 @@
                             @csrf
 
                             <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-sm text-[#0f3150]">
-
-                                Upload bukti pembayaran untuk proses verifikasi.
-
+                                Upload Struk /Bukti Bayar untuk proses verifikasi.
                             </div>
 
                             <input type="file" name="bukti_pembayaran" required accept="image/*"
@@ -152,9 +150,7 @@
 
                             <button
                                 class="w-full py-4 rounded-2xl bg-[#0f3150] hover:bg-[#17446d] text-white font-semibold transition shadow-lg">
-
                                 Kirim Bukti Pembayaran
-
                             </button>
 
                         </form>
