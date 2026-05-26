@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminProdukController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminTransaksiController;
+use App\Http\Controllers\Admin\AdminVoucherController;
 use App\Http\Controllers\Admin\PertanyaanControlller;
 use App\Http\Controllers\Admin\RiwayatTesController;
 use App\Http\Controllers\User\ProdukController;
@@ -19,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/produk', function () {
     $produks = Produk::all();
-    return view('guest.produk',compact('produks'));
+    return view('guest.produk', compact('produks'));
 });
 Route::get('/kontak', function () {
     return view('guest.kontak');
@@ -68,6 +69,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/produk/{produk}/edit', [AdminProdukController::class, 'edit'])->name('admin.produk.edit');
     Route::put('/admin/produk/{produk}', [AdminProdukController::class, 'update'])->name('admin.produk.update');
     Route::delete('/admin/produk/{produk}', [AdminProdukController::class, 'destroy'])->name('admin.produk.destroy');
+
+    Route::get('/admin/voucher', [AdminVoucherController::class, 'index'])->name('admin.voucher.index');
+    Route::get('/admin/voucher/create', [AdminVoucherController::class, 'create'])->name('admin.voucher.create');
+    Route::post('/admin/voucher', [AdminVoucherController::class, 'store'])->name('admin.voucher.store');
+    Route::delete('/admin/voucher/{id}', [AdminVoucherController::class, 'destroy'])->name('admin.voucher.destroy');
 
     Route::get('/admin/transaksi', [AdminTransaksiController::class, 'index'])->name('admin.transaksi.index');
     Route::patch('/admin/transaksi/{id}/setuju', [AdminTransaksiController::class, 'setuju'])->name('admin.transaksi.setuju');
@@ -118,7 +124,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/transaksi/{id}/detail', [TransaksiController::class, 'show'])->name('transaksi.show');
     Route::post('/transaksi/{id}/upload-bukti', [TransaksiController::class, 'uploadBukti'])->name('transaksi.upload_bukti');
 
-    Route::get('/transaksi/gagal', function () {return view('user.transaksi.gagal');
+    Route::get('/transaksi/gagal', function () {
+        return view('user.transaksi.gagal');
     })->name('transaksi.gagal');
 
 
