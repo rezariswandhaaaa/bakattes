@@ -99,6 +99,12 @@
                         <span>Produk</span>
                     </a>
 
+                    <a href="{{ route('admin.voucher.index') }}"
+                        class="flex items-center space-x-3 px-4 py-2 rounded-lg {{ Request::routeIs('admin.voucher.*') ? 'bg-[#173f67]' : 'hover:bg-[#173f67]' }}">
+                        <i data-lucide="ticket" class="w-5 h-5"></i>
+                        <span>Kelola Voucher</span>
+                    </a>
+
                     <a href="{{ route('admin.transaksi.index') }}"
                         class="flex items-center space-x-3 px-4 py-2 rounded-lg {{ Request::routeIs('admin.transaksi.*') ? 'bg-[#173f67]' : 'hover:bg-[#173f67]' }}">
                         <i data-lucide="receipt" class="w-5 h-5"></i>
