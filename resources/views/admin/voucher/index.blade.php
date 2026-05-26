@@ -15,7 +15,7 @@
         <div class="overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="text-xs font-semibold text-gray-500 uppercase bg-gray-50">
+                    <thead class="text-white uppercase  bg-[#0f3150]">
                         <tr>
                             <th class="px-6 py-3 text-left">Kode Voucher</th>
                             <th class="px-6 py-3 text-center">Tipe Diskon</th>
@@ -71,7 +71,7 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
 
-                <h2 class="mb-6 text-2xl font-bold text-gray-800">Buat Voucher Baru</h2>
+                <h2 class="mb-6 text-2xl font-bold text-gray-800 justify-center">Buat Voucher Baru</h2>
 
                 @if ($errors->any())
                     <div class="p-3 mb-4 text-sm text-red-700 bg-red-100 border border-red-200 rounded-lg">
