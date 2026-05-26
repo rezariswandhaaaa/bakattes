@@ -55,7 +55,7 @@
                                 </td>
                                 <td class="px-6 py-4 text-center whitespace-nowrap">
                                     @if ($trx->bukti_pembayaran)
-                                        <a href="{{ asset('storage/app/public/bukti_pembayaran/' . $trx->bukti_pembayaran) }}"
+                                        <a href="{{ route('lihat.bukti', $trx->bukti_pembayaran) }}"
                                             target="_blank"
                                             class="inline-flex items-center px-3 py-1 text-xs font-bold text-blue-600 transition border border-blue-100 rounded-lg hover:text-blue-800 bg-blue-50 hover:bg-blue-100">
                                             👁️ Lihat Bukti
