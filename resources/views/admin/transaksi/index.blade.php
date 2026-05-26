@@ -3,18 +3,8 @@
 @section('content')
     <div class="px-6 py-8">
 
-        <div class="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:justify-between">
-
-            <div>
-
-                <h1 class="mt-4 text-3xl font-bold tracking-tight text-[#0f3150]">
-
-                    Kelola Transaksi
-
-                </h1>
-
-            </div>
-
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-[#0f3150] mb-2">Kelola Transaksi</h1>
         </div>
 
         @if (session('success'))
