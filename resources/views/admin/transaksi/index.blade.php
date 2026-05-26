@@ -1,105 +1,284 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container px-4 py-6 mx-auto">
-        <div class="flex items-center justify-between mb-6">
-            <h1 class="text-2xl font-bold tracking-tight text-gray-800">Kelola Transaksi Manajemen</h1>
+
+    <div class="min-h-screen bg-gradient-to-br from-[#eef5fb] via-white to-[#dce8f3] p-6">
+
+        <!-- HEADER -->
+        <div class="mb-8 rounded-3xl bg-[#0f3150] shadow-[0_20px_60px_rgba(15,49,80,.25)] overflow-hidden">
+
+            <div class="px-8 py-8">
+
+                <div class="flex flex-col gap-4 md:flex-row md:justify-between">
+
+                    <div>
+
+                        <p class="mb-2 text-sm text-blue-200">
+                            Dashboard Admin
+                        </p>
+
+                        <h1 class="text-4xl font-bold text-white">
+                            Kelola Transaksi
+                        </h1>
+
+                        <p class="mt-2 text-blue-100">
+                            Verifikasi pembayaran dan aktivasi akses tes pengguna
+                        </p>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur rounded-2xl px-6 py-5 text-center min-w-[180px]">
+
+                        <p class="text-xs text-blue-200 uppercase">
+                            Total Data
+                        </p>
+
+                        <div class="mt-1 text-3xl font-bold text-white">
+                            {{ $transaksis->count() }}
+                        </div>
+
+                        <p class="text-xs text-blue-100">
+                            Transaksi
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
+
         @if (session('success'))
-            <div class="px-4 py-3 mb-4 text-sm font-medium text-green-700 border border-green-200 bg-green-50 rounded-xl">
-                {{ session('success') }}
+            <div class="p-4 mb-6 text-green-700 border border-green-200 shadow-sm rounded-2xl bg-green-50">
+
+                ✓ {{ session('success') }}
+
             </div>
         @endif
 
-        <div class="overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl">
+
+        <!-- TABLE CARD -->
+        <div
+            class="overflow-hidden rounded-3xl bg-white/90 backdrop-blur shadow-[0_10px_50px_rgba(15,49,80,.08)] border border-white">
+
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="text-xs font-semibold tracking-wider text-white uppercase bg-[#0f3150]">
-                        <tr>
-                            <th class="py-3.5 px-6 text-left">ID / Tanggal</th>
-                            <th class="py-3.5 px-6 text-left">Nama User</th>
-                            <th class="py-3.5 px-6 text-left">Produk / Nominal</th>
-                            <th class="py-3.5 px-6 text-center">Status Xendit</th>
-                            <th class="py-3.5 px-6 text-center">Bukti Transfer</th>
-                            <th class="py-3.5 px-6 text-center">Aksi Verifikasi</th>
+
+                <table class="min-w-full">
+
+                    <thead>
+
+                        <tr class="bg-[#0f3150] text-white text-xs uppercase tracking-wider">
+
+                            <th class="py-5 text-left px-7">
+                                Transaksi
+                            </th>
+
+                            <th class="py-5 text-left px-7">
+                                User
+                            </th>
+
+                            <th class="py-5 text-left px-7">
+                                Produk
+                            </th>
+
+                            <th class="py-5 text-center px-7">
+                                Status
+                            </th>
+
+                            <th class="py-5 text-center px-7">
+                                Bukti
+                            </th>
+
+                            <th class="py-5 text-center px-7">
+                                Verifikasi
+                            </th>
+
                         </tr>
+
                     </thead>
-                    <tbody class="text-sm text-gray-600 bg-white divide-y divide-gray-100">
+
+                    <tbody>
+
                         @forelse($transaksis as $trx)
-                            <tr class="transition hover:bg-gray-50/70">
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="font-bold text-gray-900">#{{ $trx->id }}</span>
-                                    <div class="text-xs text-gray-400 mt-0.5">{{ $trx->created_at->format('d M Y, H:i') }}
-                                        WIB</div>
+                            <tr class="border-b hover:bg-[#f8fbff] transition duration-300">
+
+                                <!-- ID -->
+                                <td class="py-6 px-7">
+
+                                    <div class="font-bold text-[#0f3150]">
+
+                                        #{{ $trx->id }}
+
+                                    </div>
+
+                                    <div class="mt-1 text-xs text-gray-400">
+
+                                        {{ $trx->created_at->format('d M Y • H:i') }}
+
+                                    </div>
+
                                 </td>
-                                <td class="px-6 py-4 font-medium text-gray-800">
-                                    {{ $trx->user->name ?? 'User Tidak Ditemukan' }}
+
+
+                                <!-- USER -->
+                                <td class="py-6 px-7">
+
+                                    <div class="font-semibold text-gray-800">
+
+                                        {{ $trx->user->name ?? 'User Tidak Ditemukan' }}
+
+                                    </div>
+
                                 </td>
-                                <td class="px-6 py-4">
-                                    <div class="font-medium text-gray-900">{{ $trx->produk->nama_produk ?? '-' }}</div>
-                                    <div class="text-xs font-bold text-indigo-600 mt-0.5">Rp
-                                        {{ number_format($trx->amount, 0, ',', '.') }}</div>
+
+
+                                <!-- PRODUK -->
+                                <td class="py-6 px-7">
+
+                                    <div class="font-semibold text-gray-800">
+
+                                        {{ $trx->produk->nama_produk ?? '-' }}
+
+                                    </div>
+
+                                    <div class="text-lg font-bold text-[#0f3150] mt-1">
+
+                                        Rp {{ number_format($trx->amount, 0, ',', '.') }}
+
+                                    </div>
+
                                 </td>
-                                <td class="px-6 py-4 text-center whitespace-nowrap">
+
+
+                                <!-- STATUS -->
+                                <td class="py-6 text-center px-7">
+
                                     @if ($trx->status === 'PAID')
                                         <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 border border-green-200">PAID</span>
+                                            class="inline-flex px-4 py-2 text-xs font-bold text-green-700 bg-green-100 rounded-full">
+
+                                            ✓ PAID
+
+                                        </span>
                                     @elseif($trx->status === 'PENDING')
                                         <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-yellow-50 text-yellow-700 border border-yellow-200">PENDING</span>
+                                            class="inline-flex px-4 py-2 text-xs font-bold text-yellow-700 bg-yellow-100 rounded-full">
+
+                                            ⏳ PENDING
+
+                                        </span>
                                     @else
                                         <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-200">{{ $trx->status }}</span>
+                                            class="inline-flex px-4 py-2 text-xs font-bold text-red-700 bg-red-100 rounded-full">
+
+                                            {{ $trx->status }}
+
+                                        </span>
                                     @endif
+
                                 </td>
-                                <td class="px-6 py-4 text-center whitespace-nowrap">
+
+
+                                <!-- BUKTI -->
+                                <td class="py-6 text-center px-7">
+
                                     @if ($trx->bukti_pembayaran)
-                                        <a href="{{ route('lihat.bukti', $trx->bukti_pembayaran) }}"
-                                            target="_blank"
-                                            class="inline-flex items-center px-3 py-1 text-xs font-bold text-blue-600 transition border border-blue-100 rounded-lg hover:text-blue-800 bg-blue-50 hover:bg-blue-100">
-                                            👁️ Lihat Bukti
+                                        <a href="{{ route('lihat.bukti', $trx->bukti_pembayaran) }}" target="_blank"
+                                            class="inline-flex items-center gap-2 rounded-2xl border border-[#0f3150]/20 bg-[#eef5fb] px-4 py-2 text-xs font-semibold text-[#0f3150] hover:bg-[#dce8f3]">
+
+                                            👁️ Lihat
+
                                         </a>
                                     @else
-                                        <span class="text-xs italic text-gray-400">Belum Diunggah</span>
+                                        <span class="text-xs italic text-gray-400">
+
+                                            Belum Upload
+
+                                        </span>
                                     @endif
+
                                 </td>
-                                <td class="px-6 py-4 text-center whitespace-nowrap">
-                                    @if ($trx->is_verified == 1)
+
+
+                                <!-- AKSI -->
+                                <td class="py-6 text-center px-7">
+
+                                    @if ($trx->is_verified)
                                         <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">
+                                            class="inline-flex rounded-2xl bg-[#dbe9f4] px-4 py-2 text-xs font-bold text-[#0f3150]">
+
                                             ✓ Terverifikasi
+
                                         </span>
                                     @else
                                         @if ($trx->status === 'PAID' && $trx->bukti_pembayaran)
-                                            <form action="{{ route('admin.transaksi.setuju', $trx->id) }}" method="POST"
-                                                class="inline-block">
+                                            <form action="{{ route('admin.transaksi.setuju', $trx->id) }}" method="POST">
+
                                                 @csrf
                                                 @method('PATCH')
-                                                <button type="submit"
-                                                    onclick="return confirm('Apakah Anda yakin data bukti transfer ini valid dan ingin menyetujui transaksi ini?')"
-                                                    class="bg-indigo-600 text-white py-1.5 px-4 rounded-xl text-xs font-bold hover:bg-indigo-700 transition shadow-sm">
+
+                                                <button onclick="return confirm('Setujui transaksi ini?')"
+                                                    class="rounded-2xl bg-[#0f3150] px-5 py-3 text-xs font-bold text-white shadow-lg hover:bg-[#17446d] transition">
+
                                                     Setujui Akses
+
                                                 </button>
+
                                             </form>
                                         @else
-                                            <span
-                                                class="px-2 py-1 text-xs italic text-gray-400 border border-gray-200 rounded-md bg-gray-50">Menunggu
-                                                Aksi User</span>
+                                            <span class="px-4 py-2 text-xs text-gray-500 bg-gray-100 rounded-xl">
+
+                                                Menunggu User
+
+                                            </span>
                                         @endif
                                     @endif
+
                                 </td>
+
                             </tr>
+
                         @empty
+
                             <tr>
-                                <td colspan="6" class="py-10 text-sm italic text-center text-gray-400">
-                                    Belum ada riwayat rekaman transaksi data masuk.
+
+                                <td colspan="6">
+
+                                    <div class="py-24 text-center">
+
+                                        <div class="mb-4 text-6xl">
+                                            📭
+                                        </div>
+
+                                        <h3 class="text-xl font-bold text-[#0f3150]">
+
+                                            Belum Ada Transaksi
+
+                                        </h3>
+
+                                        <p class="mt-2 text-gray-500">
+
+                                            Data transaksi akan muncul di sini.
+
+                                        </p>
+
+                                    </div>
+
                                 </td>
+
                             </tr>
                         @endforelse
+
                     </tbody>
+
                 </table>
+
             </div>
+
         </div>
+
     </div>
+
 @endsection
