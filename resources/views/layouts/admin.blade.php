@@ -107,7 +107,7 @@
 
                     <a href="{{ route('riwayat.index') }}"
                         class="flex items-center space-x-3 px-4 py-2 rounded-lg {{ Request::routeIs('riwayat.index*') ? 'bg-[#173f67]' : 'hover:bg-[#173f67]' }}">
-                        <i data-lucide="folder-clock" class="w-5 h-5"></i>
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
                         <span>Riwayat Hasil Tes</span>
                     </a>
 
