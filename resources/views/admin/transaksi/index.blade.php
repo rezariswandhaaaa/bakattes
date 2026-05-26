@@ -15,7 +15,7 @@
         <div class="overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="text-xs font-semibold tracking-wider text-gray-500 uppercase bg-[#0f3150]">
+                    <thead class="text-xs font-semibold tracking-wider text-white uppercase bg-[#0f3150]">
                         <tr>
                             <th class="py-3.5 px-6 text-left">ID / Tanggal</th>
                             <th class="py-3.5 px-6 text-left">Nama User</th>

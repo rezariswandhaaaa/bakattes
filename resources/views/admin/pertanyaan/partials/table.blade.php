@@ -1,6 +1,6 @@
 <div class="overflow-x-auto bg-white shadow-md rounded-2xl">
     <table class="min-w-full text-left border-collapse">
-        <thead class="text-white bg-[#0f3150]">
+        <thead class="text-white uppercase bg-[#0f3150]">
             <tr>
                 <th class="px-4 py-3 font-semibold border-b border-[#173f67]">No</th>
                 <th class="px-4 py-3 font-semibold border-b border-[#173f67]">Pertanyaan</th>

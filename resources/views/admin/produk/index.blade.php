@@ -29,7 +29,7 @@
         {{-- Tabel Produk --}}
         <div class="overflow-x-auto bg-white shadow rounded-2xl">
             <table class="w-full text-sm text-left">
-                <thead class="text-white bg-[#0f3150]">
+                <thead class="text-white uppercase  bg-[#0f3150]">
                     <tr>
                         <th class="px-4 py-3 ">No</th>
                         <th class="px-4 py-3 ">Nama Produk</th>

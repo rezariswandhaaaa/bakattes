@@ -1,6 +1,6 @@
 <div class="overflow-hidden bg-white shadow rounded-2xl">
     <table class="min-w-full divide-y divide-gray-200">
-        <thead class="text-white bg-[#0f3150]">
+        <thead class="text-white uppercase bg-[#0f3150]">
             <tr>
                 <th class="px-6 py-3 text-sm font-semibold tracking-wider text-left uppercase">No</th>
                 <th class="px-6 py-3 text-sm font-semibold tracking-wider text-left uppercase">Nama</th>
