@@ -39,6 +39,7 @@ Route::get('/tentang', function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/admin/api/cek-notif-transaksi', [AdminController::class, 'cekNotif'])->name('admin.api.notif');
     // kelola user
     Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');

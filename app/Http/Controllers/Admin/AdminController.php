@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Bakat;
 use App\Models\Pertanyaan;
 use App\Models\RiwayatTes;
+use App\Models\Transaksi;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class AdminController extends Controller
 {
@@ -23,6 +23,10 @@ class AdminController extends Controller
 
         $totalTesSelesai = RiwayatTes::count();
 
+        // Tambahkan 2 variabel baru ini
+        $totalTransaksi = Transaksi::count();
+        $transaksiMenunggu = Transaksi::where('status', 'PAID')->where('is_verified', 0)->count();
+
 
         // (Opsional) nanti bisa tambah data lain seperti total tes atau pendapatan
         // $totalTests = Test::count();
@@ -32,7 +36,19 @@ class AdminController extends Controller
             'totalUsers',
             'totalPertanyaan',
             'totalBakat',
-            'totalTesSelesai'
+            'totalTesSelesai',
+            'totalTransaksi',
+            'transaksiMenunggu',
         ));
+    }
+
+    public function cekNotif()
+    {
+        // Hitung berapa transaksi yang sudah dibayar (PAID) tapi belum di-ACC admin (is_verified = 0)
+        $menungguVerifikasi = Transaksi::where('status', 'PAID')->where('is_verified', 0)->count();
+
+        return response()->json([
+            'menunggu' => $menungguVerifikasi
+        ]);
     }
 }
