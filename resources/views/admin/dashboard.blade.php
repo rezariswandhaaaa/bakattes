@@ -6,7 +6,7 @@
         <p class="text-gray-600">Berikut adalah ringkasan sistem tes bakat CliftonStrengths</p>
     </div>
 
-    <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-5">
+    <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
 
         <div
             class="p-6 transition-all duration-300 bg-white border-t-4 border-blue-500 shadow-md group rounded-2xl hover:shadow-xl hover:-translate-y-1">
