@@ -6,7 +6,7 @@
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-gray-800">Manajemen Voucher Diskon</h1>
             <button onclick="openModal()"
-                class="flex items-center justify-center px-4 py-2 space-x-2 font-semibold text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm">
+                class="flex items-center justify-center px-4 py-2 space-x-2 font-semibold text-white transition bg-[#0f3150] shadow-sm">
                 <i data-lucide="plus" class="w-4 h-4"></i>
                 <span>Tambah Voucher</span>
             </button>
