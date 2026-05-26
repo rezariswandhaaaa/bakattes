@@ -29,7 +29,7 @@
                 <span class="text-gray-500">Status Pembayaran</span>
                 @if ($transaksi->status === 'PAID')
                     <span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-bold">LUNAS
-                        (Xendit)</span>
+                        </span>
                 @else
                     <span class="bg-yellow-100 text-yellow-700 px-2.5 py-1 rounded-full text-xs font-bold">MENUNGGU
                         PEMBAYARAN</span>
