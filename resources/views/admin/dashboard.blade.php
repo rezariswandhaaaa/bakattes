@@ -55,27 +55,6 @@
             <p class="text-3xl font-bold text-gray-900">{{ $totalTesSelesai }}</p>
             <p class="mt-2 text-xs text-gray-500">User yang sudah tes</p>
         </div>
-
-        <div class="p-6 transition-all duration-300 bg-white border-t-4 border-teal-500 shadow-md group rounded-2xl hover:shadow-xl hover:-translate-y-1">
-            <div class="flex items-center justify-between mb-4">
-                <div class="p-3 transition-colors bg-teal-100 rounded-xl group-hover:bg-teal-200">
-                    <i data-lucide="receipt" class="w-6 h-6 text-teal-600"></i>
-                </div>
-                <span class="px-3 py-1 text-xs font-semibold text-teal-700 bg-teal-100 rounded-full">Finance</span>
-            </div>
-            <h2 class="mb-1 text-sm font-medium text-gray-600">Total Transaksi</h2>
-            <p class="text-3xl font-bold text-gray-900">{{ $totalTransaksi }}</p>
-            <p class="mt-2 text-xs font-semibold">
-                @if($transaksiMenunggu > 0)
-                    <span class="flex items-center text-red-600 animate-pulse">
-                        <span class="w-2 h-2 mr-1 bg-red-600 rounded-full"></span>
-                        {{ $transaksiMenunggu }} Menunggu Verifikasi
-                    </span>
-                @else
-                    <span class="text-gray-500">Semua Terverifikasi</span>
-                @endif
-            </p>
-        </div>
     </div>
 
     <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
