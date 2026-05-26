@@ -55,7 +55,7 @@ class TransaksiController extends Controller
             'produk_id' => $produk->id,
             'voucher_id' => $voucherId,
             'potongan' => $potongan,
-            'amount' => $produk->$finalAmount,
+            'amount' => $finalAmount,
             'status' => 'PENDING'
         ]);
 
