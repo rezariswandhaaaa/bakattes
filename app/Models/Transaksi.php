@@ -18,6 +18,8 @@ class Transaksi extends Model
         'invoice_url',       // Tambahkan ini agar link Xendit tersimpan
         'amount',
         'status',            // Digunakan untuk update jadi PAID
+        'bukti_pembayaran',
+        'is_verified',
         'payment_type',
         'paid_at',           // Digunakan untuk mencatat waktu bayar
     ];

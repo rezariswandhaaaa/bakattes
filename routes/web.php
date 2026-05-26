@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminProdukController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminTransaksiController;
 use App\Http\Controllers\Admin\PertanyaanControlller;
 use App\Http\Controllers\Admin\RiwayatTesController;
 use App\Http\Controllers\User\ProdukController;
@@ -9,10 +10,7 @@ use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\TesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\User\TransaksiController;
-use App\Http\Controllers\Webhook\XenditWebhookController;
 use App\Models\Produk;
-use App\Models\Transaksi;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -69,6 +67,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/produk/{produk}/edit', [AdminProdukController::class, 'edit'])->name('admin.produk.edit');
     Route::put('/admin/produk/{produk}', [AdminProdukController::class, 'update'])->name('admin.produk.update');
     Route::delete('/admin/produk/{produk}', [AdminProdukController::class, 'destroy'])->name('admin.produk.destroy');
+
+    Route::get('/admin/transaksi', [AdminTransaksiController::class, 'index'])->name('admin.transaksi.index');
+    Route::patch('/admin/transaksi/{id}/setuju', [AdminTransaksiController::class, 'setuju'])->name('admin.transaksi.setuju');
 });
 
 
@@ -102,8 +103,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/transaksi', [TransaksiController::class, 'store'])->name('user.transaksi.store');
 
-    Route::get('/transaksi/sukses', function () {return view('user.transaksi.sukses');
-    })->name('transaksi.sukses');
+    Route::get('/transaksi/sukses', [TransaksiController::class, 'sukses'])->name('transaksi.sukses');
+    Route::get('/transaksi/{id}/detail', [TransaksiController::class, 'show'])->name('transaksi.show');
+    Route::post('/transaksi/{id}/upload-bukti', [TransaksiController::class, 'uploadBukti'])->name('transaksi.upload_bukti');
 
     Route::get('/transaksi/gagal', function () {return view('user.transaksi.gagal');
     })->name('transaksi.gagal');
