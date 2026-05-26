@@ -14,9 +14,11 @@ class Transaksi extends Model
     protected $fillable = [
         'user_id',
         'produk_id',
+        'voucher_id',
         'xendit_invoice_id', // Digunakan untuk mencari data saat callback
         'invoice_url',       // Tambahkan ini agar link Xendit tersimpan
         'amount',
+        'potongan',
         'status',            // Digunakan untuk update jadi PAID
         'bukti_pembayaran',
         'is_verified',
