@@ -109,7 +109,7 @@
 
                         <!-- Tombol Beli Sekarang -->
                         <button type="submit"
-                            class="w-full py-6 text-base font-bold text-white transition-colors duration-200 rounded-md bg-[#0f3150] hover:bg-[#173f67] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f3150]">
+                            class="w-full py-5 text-base font-bold text-white transition-colors duration-200 rounded-md bg-[#0f3150] hover:bg-[#173f67] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f3150]">
                             Beli Sekarang
                         </button>
                     </form>

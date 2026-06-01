@@ -23,10 +23,10 @@
         .button-animated {
             background-color: transparent;
             /* Awalnya transparan */
-            color: #808bf3;
+            color: #173f67;
             /* Warna teks biru */
             padding: 12px 24px;
-            border: 2px solid #808bf3;
+            border: 2px solid grey;
             /* Garis tepi biru */
             border-radius: 50px;
             /* Membuat tombol lebih bulat */
@@ -43,7 +43,7 @@
 
         /* Gaya saat kursor di atas tombol (hover) */
         .button-animated:hover {
-            background-color: #808bf3;
+            background-color: #173f67;
             /* Berubah menjadi biru saat di-hover */
             color: white;
             /* Warna teks menjadi putih saat di-hover */
@@ -69,22 +69,22 @@
             {{-- Menu --}}
             <div class="flex items-center space-x-6 md:space-x-10">
                 <a href="{{ route('dashboard') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('dashboard') ? 'text-purple-400' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('dashboard') ? 'text-purple-300' : 'hover:text-purple-600' }}">
                     Beranda
                 </a>
 
                 <a href="{{ route('user.produk') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.produk') || Request::routeIs('produk.show') ? 'text-purple-400' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.produk') || Request::routeIs('produk.show') ? 'text-purple-300' : 'hover:text-purple-600' }}">
                     Produk
                 </a>
 
                 <a href="{{ route('user.kontak') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.kontak') ? 'text-purple-400' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.kontak') ? 'text-purple-300' : 'hover:text-purple-600' }}">
                     Kontak
                 </a>
 
                 <a href="{{ route('user.tentang') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.tentang') ? 'text-purple-400' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.tentang') ? 'text-purple-300' : 'hover:text-purple-600' }}">
                     Tentang
                 </a>
             </div>
