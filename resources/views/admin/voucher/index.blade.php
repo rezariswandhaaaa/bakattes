@@ -21,6 +21,7 @@
                             <th class="px-6 py-3 text-center">Tipe Diskon</th>
                             <th class="px-6 py-3 text-center">Nominal / %</th>
                             <th class="px-6 py-3 text-center">Sisa Kuota</th>
+                            <th class="px-6 py-3 text-center">Tanggal Berakhir</th>
                             <th class="px-6 py-3 text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -38,6 +39,15 @@
                                 <td
                                     class="px-6 py-3 font-medium text-center {{ $v->kuota <= 0 ? 'text-red-500' : 'text-gray-800' }}">
                                     {{ $v->kuota }} x
+                                </td>
+                                <td class="px-6 py-3 font-medium text-center text-gray-700">
+                                    @if($v->expired_at)
+                                        <span class="px-2 py-1 text-xs text-gray-700 bg-gray-100 border border-gray-200 rounded-md">
+                                            {{ \Carbon\Carbon::parse($v->expired_at)->format('d M Y, H:i') }}
+                                        </span>
+                                    @else
+                                        <span class="text-xs italic text-gray-400">Tanpa Batas</span>
+                                    @endif
                                 </td>
                                 <td class="px-6 py-3 text-center">
                                     <form action="{{ route('admin.voucher.destroy', $v->id) }}" method="POST"
@@ -71,7 +81,7 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
 
-                <h2 class="mb-6 text-2xl font-bold text-gray-800 justify-center">Buat Voucher Baru</h2>
+                <h2 class="justify-center mb-6 text-2xl font-bold text-gray-800">Buat Voucher Baru</h2>
 
                 @if ($errors->any())
                     <div class="p-3 mb-4 text-sm text-red-700 bg-red-100 border border-red-200 rounded-lg">
@@ -123,15 +133,14 @@
                                 value="{{ old('kuota', 10) }}">
                         </div>
                         <div>
-                            <label class="block mb-1 text-sm font-semibold text-gray-700">Tanggal Berakhir
-                                (Opsional)</label>
+                            <label class="block mb-1 text-sm font-semibold text-gray-700">Tanggal Berakhir</label>
                             <input type="datetime-local" name="expired_at"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                                 value="{{ old('expired_at') }}">
                         </div>
                     </div>
 
-                    <div class="pt-4 mt-6 border-t border-gray-100 flex justify-end space-x-3">
+                    <div class="flex justify-end pt-4 mt-6 space-x-3 border-t border-gray-100">
                         <button type="button" onclick="closeModal()"
                             class="px-5 py-2.5 text-gray-700 bg-gray-100 rounded-xl font-semibold hover:bg-gray-200 transition">Batal</button>
                         <button type="submit"
