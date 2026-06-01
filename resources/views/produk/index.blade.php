@@ -76,7 +76,7 @@
                 </h1>
 
                 <!-- Box Harga -->
-                <div class="h-16 px-6 py-5 mb-6 border border-gray-200 rounded-xl bg-gray-50/50">
+                <div class="flex items-center h-16 px-6 py-5 mb-6 border border-gray-200 rounded-xl bg-gray-50/50">
                     @if ($produk->harga > 0)
                         <h2 class="text-4xl font-extrabold tracking-tight text-[#0f3150]">
                             Rp {{ number_format($produk->harga, 0, ',', '.') }}
