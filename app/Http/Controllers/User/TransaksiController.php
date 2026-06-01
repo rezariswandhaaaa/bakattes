@@ -70,37 +70,9 @@ class TransaksiController extends Controller
                 Voucher::where('id', $voucherId)->decrement('kuota');
             }
 
-            return redirect()->route('transaksi.sukses')->with('success', 'Akses gratis berhasil diaktifkan dengan voucher!');
+            return redirect()->route('transaksi.show', $transaksi->id);
         }
 
-        $invoiceRequest = new CreateInvoiceRequest([
-            'external_id' => 'transaksi_' . $transaksi->id,
-            'amount' => $finalAmount,
-            'description' => $produk->nama_produk . ($voucherId ? ' (Diskon)' : ''),
-            'payer_email' => Auth::user()->email,
-            'currency' => 'IDR',
-            'success_redirect_url' => route('transaksi.show', $transaksi->id),
-            'failure_redirect_url' => route('transaksi.gagal'),
-        ]);
-
-        try {
-            $invoice = $invoiceApi->createInvoice($invoiceRequest);
-
-            // Update transaksi dengan Xendit ID dan URL
-            $transaksi->update([
-                'xendit_invoice_id' => $invoice->getId(),
-                'invoice_url' => $invoice->getInvoiceUrl(),
-                'status' => $invoice->getStatus()
-            ]);
-
-            if ($voucherId) {
-                Voucher::where('id', $voucherId)->decrement('kuota');
-            }
-
-            return redirect()->away($invoice->getInvoiceUrl());
-        } catch (\Exception $e) {
-            return back()->with('error', $e->getMessage());
-        }
     }
 
     public function show($id)
