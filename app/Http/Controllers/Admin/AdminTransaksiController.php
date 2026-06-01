@@ -22,7 +22,9 @@ class AdminTransaksiController extends Controller
         $transaksi = Transaksi::findOrFail($id);
 
         $transaksi->update([
-            'is_verified' => 1
+            'status' => 'PAID',
+            'is_verified' => 1,
+            'paid_at' => now(),
         ]);
 
         return back()->with('success', 'Transaksi ID #' . $transaksi->id . ' berhasil diverifikasi.');

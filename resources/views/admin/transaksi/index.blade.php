@@ -162,7 +162,7 @@
                                         Terverifikasi
 
                                     </span>
-                                @elseif($trx->status === 'PAID' && $trx->bukti_pembayaran)
+                                @elseif($trx->bukti_pembayaran)
                                     <form action="{{ route('admin.transaksi.setuju', $trx->id) }}" method="POST">
 
                                         @csrf
