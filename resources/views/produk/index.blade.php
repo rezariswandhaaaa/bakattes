@@ -71,12 +71,12 @@
             <div class="flex flex-col pt-2">
 
                 <!-- Judul Produk -->
-                <h1 class="text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
+                <h1 class="py-2 text-3xl font-extrabold leading-tight text-gray-900 lg:text-4xl">
                     {{ $produk->nama_produk }}
                 </h1>
 
                 <!-- Box Harga -->
-                <div class="px-6 py-6 mb-6 border border-gray-200 rounded-xl bg-gray-50/50">
+                <div class="px-6 py-5 mb-6 border border-gray-200 rounded-xl bg-gray-50/50">
                     @if ($produk->harga > 0)
                         <h2 class="text-4xl font-extrabold tracking-tight text-[#0f3150]">
                             Rp {{ number_format($produk->harga, 0, ',', '.') }}
@@ -109,7 +109,7 @@
 
                         <!-- Tombol Beli Sekarang -->
                         <button type="submit"
-                            class="w-full py-5 text-base font-bold text-white transition-colors duration-200 rounded-md bg-[#0f3150] hover:bg-[#173f67] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f3150]">
+                            class="w-full py-6 text-base font-bold text-white transition-colors duration-200 rounded-md bg-[#0f3150] hover:bg-[#173f67] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f3150]">
                             Beli Sekarang
                         </button>
                     </form>
