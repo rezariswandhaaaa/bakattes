@@ -35,7 +35,7 @@
                                         Rp {{ number_format($produk->harga, 0, ',', '.') }}
                                     </p>
                                     <a href="{{ route('produk.show', $produk->id) }}"
-                                        class="inline-flex items-center justify-center px-1 text-sm font-semibold text-white rounded-lg bg-[#0f3150] hover:from-[#0f3150] hover:to-[#173f67]  transition-all duration-300  shadow-md hover:shadow-xl  transform hover:-translate-y-0.5 active:scale-95">
+                                        class="inline-flex items-center justify-center px-1 text-sm font-semibold text-white rounded-lg bg-[#0f3150] hover:from-[#173f67] hover:to-[#205586]  transition-all duration-300  shadow-md hover:shadow-xl  transform hover:-translate-y-0.5 active:scale-95">
                                         Beli Sekarang
                                     </a>
                                 </div>

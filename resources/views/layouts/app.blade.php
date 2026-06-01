@@ -23,10 +23,10 @@
         .button-animated {
             background-color: transparent;
             /* Awalnya transparan */
-            color: #173f67;
+            color: #0f3150;
             /* Warna teks biru */
             padding: 12px 24px;
-            border: 2px solid grey;
+            border: 2px solid #0f3150;
             /* Garis tepi biru */
             border-radius: 50px;
             /* Membuat tombol lebih bulat */
