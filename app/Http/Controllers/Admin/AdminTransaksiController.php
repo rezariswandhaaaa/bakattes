@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Transaksi;
-use Illuminate\Support\Facades\Request;
+
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class AdminTransaksiController extends Controller
 {
