@@ -69,22 +69,22 @@
             {{-- Menu --}}
             <div class="flex items-center space-x-6 md:space-x-10">
                 <a href="{{ route('dashboard') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('dashboard') ? 'text-purple-300' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('dashboard') ? 'text-purple-400' : 'hover:text-purple-600' }}">
                     Beranda
                 </a>
 
                 <a href="{{ route('user.produk') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.produk') || Request::routeIs('produk.show') ? 'text-purple-300' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.produk') || Request::routeIs('produk.show') ? 'text-purple-400' : 'hover:text-purple-600' }}">
                     Produk
                 </a>
 
                 <a href="{{ route('user.kontak') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.kontak') ? 'text-purple-300' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.kontak') ? 'text-purple-400' : 'hover:text-purple-600' }}">
                     Kontak
                 </a>
 
                 <a href="{{ route('user.tentang') }}"
-                    class="relative text-white font-medium {{ Request::routeIs('user.tentang') ? 'text-purple-300' : 'hover:text-purple-600' }}">
+                    class="relative text-white font-medium {{ Request::routeIs('user.tentang') ? 'text-purple-400' : 'hover:text-purple-600' }}">
                     Tentang
                 </a>
             </div>

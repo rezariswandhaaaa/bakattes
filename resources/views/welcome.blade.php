@@ -24,10 +24,10 @@
         .button-animated {
             background-color: transparent;
             /* Awalnya transparan */
-            color: #808bf3;
+            color: #0f3150;
             /* Warna teks biru */
             padding: 12px 24px;
-            border: 2px solid #808bf3;
+            border: 2px solid #0f3150;
             /* Garis tepi biru */
             border-radius: 50px;
             /* Membuat tombol lebih bulat */
@@ -44,7 +44,7 @@
 
         /* Gaya saat kursor di atas tombol (hover) */
         .button-animated:hover {
-            background-color: #808bf3;
+            background-color: #173f67;
             /* Berubah menjadi biru saat di-hover */
             color: white;
             /* Warna teks menjadi putih saat di-hover */
