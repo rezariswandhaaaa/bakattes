@@ -62,7 +62,7 @@
 
                                 <div class="font-bold text-[#0f3150]">
 
-                                    #{{ $trx->id }}
+                                    #{{ $transaksis->firstItem() + $loop->index }}
 
                                 </div>
 
