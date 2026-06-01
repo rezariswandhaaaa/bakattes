@@ -75,11 +75,6 @@
                             <div class="flex flex-col flex-grow p-4"> {{-- Tambahkan 'flex flex-col flex-grow' --}}
                                 <h3 class="mb-2 text-xl font-bold text-navy">{{ $produk->nama_produk }}</h3>
 
-                                {{-- Deskripsi dengan flex-grow agar mendorong konten bawah ke dasar kartu --}}
-                                <p class="flex-grow mb-4 text-sm text-gray-700">
-                                    {{ $produk->deskripsi }}
-                                </p>
-
                                 {{-- Bagian Harga dan Tombol --}}
                                 <div class="flex flex-row items-center justify-between gap-2 pt-4 mt-auto">
                                     {{-- mt-auto memastikan ini selalu di bawah --}}
