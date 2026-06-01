@@ -29,7 +29,6 @@
                             {{-- Info produk --}}
                             <div class="p-4">
                                 <h3 class="mb-2 text-xl font-bold text-navy">{{ $produk->nama_produk }}</h3>
-                                <p class="mb-4 text-gray-700">{{ $produk->deskripsi }}</p>
 
                                 <div class="flex justify-between gap-4">
                                     <p class="mb-4 text-lg font-semibold text-navy">
