@@ -77,6 +77,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/transaksi', [AdminTransaksiController::class, 'index'])->name('admin.transaksi.index');
     Route::patch('/admin/transaksi/{id}/setuju', [AdminTransaksiController::class, 'setuju'])->name('admin.transaksi.setuju');
+    Route::delete('/admin/transaksi/hapus-bulanan', [AdminTransaksiController::class, 'deleteBulanan'])->name('admin.transaksi.deleteBulanan');
 
     Route::get('/lihat-bukti/{filename}', function ($filename) {
         $path = storage_path('app/public/bukti_pembayaran/' . $filename);
