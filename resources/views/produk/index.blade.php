@@ -116,13 +116,13 @@
 
         <!-- Kartu Produk Utama -->
         <div
-            class="grid grid-cols-1 gap-12 p-8 bg-white border shadow-xl border-slate-100 shadow-slate-200/40 lg:grid-cols-12 rounded-3xl lg:p-10 fade-in">
+            class="grid grid-cols-1 gap-12 p-8 bg-[#0f3150] border shadow-xl border-slate-100 shadow-slate-200/40 lg:grid-cols-12 rounded-3xl lg:p-10 fade-in">
 
             <!-- Gambar Produk -->
             <div
                 class="overflow-hidden border rounded-3xl bg-slate-50 border-slate-100 lg:col-span-5 product-image-wrapper">
                 <img src="{{ asset('images/first.png') }}" alt="{{ $produk->nama_produk }}"
-                    class="object-contain w-full transition-transform duration-700 ease-in-out h-80 lg:h-96">
+                    class="object-contain w-full transition-transform duration-700 ease-in-out h-54 lg:h-70">
             </div>
 
             <!-- Detail Produk -->
