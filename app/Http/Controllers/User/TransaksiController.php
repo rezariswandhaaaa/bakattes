@@ -8,9 +8,7 @@ use App\Models\Transaksi;
 use App\Models\Produk;
 use App\Models\Voucher;
 use Illuminate\Support\Facades\Auth;
-use Xendit\Configuration;
-use Xendit\Invoice\CreateInvoiceRequest;
-use Xendit\Invoice\InvoiceApi;
+
 
 class TransaksiController extends Controller
 {
@@ -21,9 +19,6 @@ class TransaksiController extends Controller
         $finalAmount = $produk->harga;
         $potongan = 0;
         $voucherId = null;
-
-        Configuration::setXenditKey(config('services.xendit.secret_key'));
-        $invoiceApi = new InvoiceApi();
 
 
         if ($request->filled('kode_voucher')) {
@@ -70,8 +65,10 @@ class TransaksiController extends Controller
                 Voucher::where('id', $voucherId)->decrement('kuota');
             }
 
-            return redirect()->route('transaksi.show', $transaksi->id);
+            return redirect()->route('transaksi.sukses')->with('success', 'Akses gratis berhasil diaktifkan dengan voucher!');
         }
+
+        return redirect()->route('transaksi.show', $transaksi->id);
 
     }
 
