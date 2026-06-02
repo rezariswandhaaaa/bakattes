@@ -42,9 +42,8 @@
         <div class="container px-4 mx-auto">
             <h2 class="mb-12 text-3xl font-bold text-center text-navy">Temukan Potensi Sejati Anda bersama Kami</h2>
             <div class="flex flex-wrap justify-center -mx-4">
-
                 <div class="w-full px-4 mb-8 sm:w-1/2 lg:w-1/4">
-                    <a href="{{ url('/produk') }}" class="block h-full">
+                    <a href="{{ route('user.produk') }}" class="block h-full">
                     <div class="h-full overflow-hidden bg-white rounded-lg shadow-lg shadow-lg-hover-effect">
                         <img src="{{ asset('images/first.png') }}" class="object-cover w-full h-48" alt="Feature Image">
                         <div class="p-6">
@@ -52,12 +51,11 @@
                             <p class="mb-4 text-base text-navy">
                                 Tes ini membantu menemukan kekuatan dominan dan potensi karier Anda.
                             </p>
-
                         </div>
                     </div>
                     </a>
                 </div>
-
+                
                 <div class="w-full px-4 mb-8 sm:w-1/2 lg:w-1/4">
                     <a href="{{ url('/produk') }}" class="block h-full">
                     <div class="h-full overflow-hidden bg-white rounded-lg shadow-lg shadow-lg-hover-effect">

@@ -230,7 +230,7 @@
 
         </div>
 
-        <div id="deleteModal" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity bg-black/50 backdrop-blur-sm">
+        <div id="deleteModal" class="fixed inset-0 z-50 flex items-center justify-center transition-opacity bg-black/50 backdrop-blur-sm">
             <div class="w-full max-w-md p-8 bg-white shadow-xl rounded-2xl">
                 <h2 class="mb-2 text-2xl font-bold text-gray-800">Hapus Transaksi</h2>
                 <p class="mb-6 text-sm text-gray-500">Pilih bulan dan tahun transaksi yang ingin dihapus secara permanen dari sistem.</p>
@@ -252,7 +252,6 @@
                 </form>
             </div>
         </div>
-
 
     </div>
 
