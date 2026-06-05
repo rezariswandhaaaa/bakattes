@@ -104,9 +104,9 @@
                             <p class="text-sm mb-4 text-gray-600">Silakan lakukan transfer tepat sebesar <strong class="text-[#0f3150]">Rp {{ number_format($transaksi->amount, 0, ',', '.') }}</strong> ke rekening berikut:</p>
 
                             <div class="bg-white p-4 rounded-xl border border-blue-100 shadow-sm flex flex-col items-center justify-center text-center">
-                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Bank BCA</span>
-                                <span class="font-mono text-2xl font-bold text-[#0f3150] tracking-widest">1234567890</span>
-                                <span class="text-sm text-gray-500 mt-2">a.n PT Project Hebat</span>
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Bank BPD DIY</span>
+                                <span class="font-mono text-2xl font-bold text-[#0f3150] tracking-widest">001211049296</span>
+                                <span class="text-sm text-gray-500 mt-2">a.n Chayadi Oktomy Noto Susanto</span>
                             </div>
                         </div>
 
